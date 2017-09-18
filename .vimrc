@@ -1,18 +1,25 @@
 """ PLUGINS (Using Vim-plug)
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'vim-airline/vim-airline' " A simple airline
-Plug 'vim-airline/vim-airline-themes'
-Plug 'chriskempson/base16-vim' " Colorscheme
+Plug 'SirVer/ultisnips' " Code snippets
 Plug 'godlygeek/csapprox'
-Plug 'sheerun/vim-polyglot' " More syntax highlighting
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'tpope/vim-surround' " Autocomplete brackets
+Plug 'tpope/vim-surround' " Fix surroundings
+Plug 'jiangmiao/auto-pairs' " Autocomplete surroundings
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tpope/vim-commentary' " Easy comments
+
+Plug 'morhetz/gruvbox' " Colorscheme
+Plug 'vim-airline/vim-airline' " A simple airline
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/rainbow_parentheses.vim'
+
+Plug 'sheerun/vim-polyglot' " More syntax highlighting
+Plug 'tpope/vim-rails' " Better RoR
+Plug 'mattn/emmet-vim' " HTML snippets
 
 call plug#end()
 
@@ -24,10 +31,6 @@ noremap $ <nop>
 noremap B ^
 noremap E $
 
-" Visual mode * or # searches for the highlighted word
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 map <c-space> ?
@@ -37,11 +40,23 @@ map z/ <Plug>(incsearch-fuzzy-/)
 map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
 
+" Buffers
+" Move to the previous buffer with 'gp'
+nnoremap gp :bp<CR>
+" Move to the next buffer with 'gn'
+nnoremap gn :bn<CR>
+" List all possible buffers with 'gl'
+nnoremap gl :ls<CR>
+" List all possible buffers with 'gb' and accept a new buffer argument [1]
+nnoremap gb :ls<CR>:b
+set hidden " Enable hidden buffers, so you can switch buffers without saving
+
 
 """ SETTINGS
-" Line numbering
-set rnu	" Relative numbering
-set nu	" Current line number
+
+" Open splits at bottom/right instead of top/left
+set splitbelow
+set splitright
 
 set showcmd " Show incomplete commands at bottom-right
 
@@ -64,28 +79,24 @@ set smartindent
 
 set ttimeoutlen=10 " Faster to exit insert mode
 
-""" THEME
-colorscheme base16-hopscotch " Color scheme
+""" THEME AND VISUALS
+set background=dark
+let g:gruvbox_italic=0
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 let g:airline_theme='gruvbox' " Airline theme
 let g:airline_powerline_fonts = 1 " Adds arrow character for airline to display properly
-hi Normal ctermbg=none " Stops color scheme from overriding transparent backgrounds
-hi NonText ctermbg=none
+let g:airline#extensions#tabline#enabled = 1
+
+let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
 
 au VimEnter * RainbowParentheses " Enable rainbow parentheses on startup
 
-let g:CSApprox_hook_post = [
-            \ 'highlight Normal            ctermbg=NONE',
-            \ 'highlight LineNr            ctermbg=NONE',
-            \ 'highlight SignifyLineAdd    cterm=bold ctermbg=NONE ctermfg=green',
-            \ 'highlight SignifyLineDelete cterm=bold ctermbg=NONE ctermfg=red',
-            \ 'highlight SignifyLineChange cterm=bold ctermbg=NONE ctermfg=yellow',
-            \ 'highlight SignifySignAdd    cterm=bold ctermbg=NONE ctermfg=green',
-            \ 'highlight SignifySignDelete cterm=bold ctermbg=NONE ctermfg=red',
-            \ 'highlight SignifySignChange cterm=bold ctermbg=NONE ctermfg=yellow',
-            \ 'highlight SignColumn        ctermbg=NONE',
-            \ 'highlight CursorLine        ctermbg=NONE cterm=underline',
-            \ 'highlight Folded            ctermbg=NONE cterm=bold',
-            \ 'highlight FoldColumn        ctermbg=NONE cterm=bold',
-            \ 'highlight NonText           ctermbg=NONE',
-            \ 'highlight clear LineNr'
-            \]
+" Line numbering
+set rnu	" Relative numbering
+set nu	" Current line number
+
+" Highlight active line
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
+
