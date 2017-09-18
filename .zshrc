@@ -96,6 +96,7 @@ alias 'youtube-dla=youtube-dl --extract-audio --audio-format mp3 --no-playlist'
 alias 'youtube-dlap=youtube-dl --extract-audio --audio-format mp3'
 # Misc
 alias 'lol=lolcat'
+alias 'g=git'
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
@@ -103,6 +104,9 @@ export GOPATH=$HOME/dev/go
 
 # Terminal color mode
 set t_Co=256
+
+# Disable tmux windows from auto changing names
+DISABLE_AUTO_TITLE=true
 
 # STARTUP
 fortune | cowsay -f stegosaurus | lolcat
