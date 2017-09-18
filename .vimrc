@@ -12,7 +12,7 @@ Plug 'roxma/vim-tmux-clipboard'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-commentary' " Easy comments
 
-Plug 'morhetz/gruvbox' " Colorscheme
+Plug 'rafi/awesome-vim-colorschemes' " Collection of colorschemes
 Plug 'vim-airline/vim-airline' " A simple airline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -64,11 +64,6 @@ set autoread " Auto update file when externally changed
 
 set clipboard^=unnamed " Use standard clipboard
 
-" Disable backups and swap files
-set nobackup
-set nowb
-set noswapfile
-
 " Tabs and spacing
 set tabstop=2
 set shiftwidth=2
@@ -84,7 +79,7 @@ set background=dark
 let g:gruvbox_italic=0
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
-let g:airline_theme='gruvbox' " Airline theme
+let g:airline_theme='jellybeans' " Airline theme
 let g:airline_powerline_fonts = 1 " Adds arrow character for airline to display properly
 let g:airline#extensions#tabline#enabled = 1
 
