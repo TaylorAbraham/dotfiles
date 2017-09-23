@@ -95,8 +95,9 @@ set nu	" Current line number
 
 " Highlight active line
 set cursorline
-" Cursorline for transparent terminal
+" For a transparent terminal
 hi CursorLine term=bold cterm=bold guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 " Cursorline for opaque terminal
-" hi CursorLine term=bold cterm=bold guibg=Grey40
+"hi CursorLine term=bold cterm=bold guibg=Grey40
 
