@@ -72,6 +72,8 @@ set autoindent
 set expandtab " Automatically convert tabs to spaces
 set smartindent
 
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " No autocomments
+
 set ttimeoutlen=10 " Faster to exit insert mode
 
 """ THEME AND VISUALS
@@ -93,5 +95,8 @@ set nu	" Current line number
 
 " Highlight active line
 set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
+" Cursorline for transparent terminal
+hi CursorLine term=bold cterm=bold guibg=NONE ctermbg=NONE
+" Cursorline for opaque terminal
+" hi CursorLine term=bold cterm=bold guibg=Grey40
 
