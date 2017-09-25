@@ -94,9 +94,19 @@ alias 'py=python' # Python 2
 # Youtube-dl
 alias 'youtube-dla=youtube-dl --extract-audio --audio-format mp3 --no-playlist'
 alias 'youtube-dlap=youtube-dl --extract-audio --audio-format mp3'
+# Git
+alias 'g=git'
+alias 'gs=git status'
+alias 'ga=git add'
+alias 'gc=git commit -m'
+alias 'gp=git push'
+alias 'gpl=git pull'
+alias 'gd=git diff'
+alias 'gi=git init'
+alias 'gl=git log'
+alias 'gr=git reset'
 # Misc
 alias 'lol=lolcat'
-alias 'g=git'
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
