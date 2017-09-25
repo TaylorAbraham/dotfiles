@@ -47,7 +47,7 @@ nnoremap gp :bp<CR>
 " Move to the next buffer with 'gn'
 nnoremap gn :bn<CR>
 " Delete buffer with 'gd'
-nnoremap gd :gd<CR>
+nnoremap gd :bd<CR>
 " List all possible buffers with 'gl'
 nnoremap gl :ls<CR>
 " List all possible buffers with 'gb' and accept a new buffer argument [1]
