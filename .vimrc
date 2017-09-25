@@ -11,6 +11,7 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-commentary' " Easy comments
+Plug 'scrooloose/nerdtree' " Folder hierarchy tree
 
 Plug 'rafi/awesome-vim-colorschemes' " Collection of colorschemes
 Plug 'vim-airline/vim-airline' " A simple airline
@@ -75,6 +76,10 @@ set smartindent
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " No autocomments
 
 set ttimeoutlen=10 " Faster to exit insert mode
+
+" Open NERDTree when opening folder
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 """ THEME AND VISUALS
 set background=dark
