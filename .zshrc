@@ -118,6 +118,9 @@ set t_Co=256
 # Disable tmux windows from auto changing names
 DISABLE_AUTO_TITLE=true
 
+# Disable ctrl+s locking vim
+stty -ixon
+
 # STARTUP
 fortune | cowsay -f stegosaurus | lolcat
 
