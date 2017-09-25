@@ -77,9 +77,15 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "
 
 set ttimeoutlen=10 " Faster to exit insert mode
 
+" NERDTree
+" Toggle NERDTree with CTRL+N
+map <C-n> :NERDTreeToggle<CR>
 " Open NERDTree when opening folder
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" Open NERDTree when opening empty file
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 """ THEME AND VISUALS
 set background=dark
