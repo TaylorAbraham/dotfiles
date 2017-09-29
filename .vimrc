@@ -36,6 +36,9 @@ noremap E $
 map <space> /
 map <c-space> ?
 
+" Map // to search for visual selection
+vnoremap // y/<C-R>"<CR>"
+
 " Map fuzzy search
 map z/ <Plug>(incsearch-fuzzy-/)
 map z? <Plug>(incsearch-fuzzy-?)
