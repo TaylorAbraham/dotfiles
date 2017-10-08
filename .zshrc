@@ -107,6 +107,7 @@ alias 'gl=git log'
 alias 'gr=git reset'
 # Misc
 alias 'lol=lolcat'
+alias 'node=nodejs'
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
