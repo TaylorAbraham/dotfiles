@@ -91,6 +91,7 @@ alias 't=tmux'
 # Python
 alias 'python=python3' # Python 3
 alias 'py=python' # Python 2
+alias 'pip=pip3'
 # Youtube-dl
 alias 'youtube-dla=youtube-dl --extract-audio --audio-format mp3 --no-playlist'
 alias 'youtube-dlap=youtube-dl --extract-audio --audio-format mp3'
@@ -105,6 +106,9 @@ alias 'gd=git diff'
 alias 'gi=git init'
 alias 'gl=git log'
 alias 'gr=git reset'
+alias 'gch=git checkout'
+alias 'gm=git merge'
+alias 'gb=git branch'
 # Misc
 alias 'lol=lolcat'
 alias 'node=nodejs'
@@ -115,6 +119,11 @@ export GOPATH=$HOME/dev/go
 
 # Terminal color mode
 set t_Co=256
+
+# virtualenv and virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export WORKON_HOME=$HOME/.virtualenvs
+source /home/logan/.local/bin/virtualenvwrapper.sh
 
 # Disable tmux windows from auto changing names
 DISABLE_AUTO_TITLE=true
