@@ -14,6 +14,7 @@ Plug 'tpope/vim-commentary' " Easy comments
 Plug 'scrooloose/nerdtree' " Folder hierarchy tree
 
 Plug 'rafi/awesome-vim-colorschemes' " Collection of colorschemes
+Plug 'hdima/python-syntax' " Better Python syntax highlighting
 Plug 'vim-airline/vim-airline' " A simple airline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -76,7 +77,6 @@ set shiftwidth=2
 set softtabstop=2
 set autoindent
 set expandtab " Automatically convert tabs to spaces
-set smartindent
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " No autocomments
 
@@ -102,6 +102,8 @@ let g:airline_powerline_fonts = 1 " Adds arrow character for airline to display 
 let g:airline#extensions#tabline#enabled = 1
 
 let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+
+let python_highlight_all = 1
 
 au VimEnter * RainbowParentheses " Enable rainbow parentheses on startup
 
