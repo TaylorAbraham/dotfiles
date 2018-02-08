@@ -1,6 +1,7 @@
 """ PLUGINS (Using Vim-plug)
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Utilities
 Plug 'SirVer/ultisnips' " Code snippets
 Plug 'godlygeek/csapprox'
 Plug 'tpope/vim-surround' " Fix surroundings
@@ -12,13 +13,15 @@ Plug 'roxma/vim-tmux-clipboard'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-commentary' " Easy comments
 Plug 'scrooloose/nerdtree' " Folder hierarchy tree
-
+" Colors and themes
 Plug 'rafi/awesome-vim-colorschemes' " Collection of colorschemes
 Plug 'hdima/python-syntax' " Better Python syntax highlighting
 Plug 'vim-airline/vim-airline' " A simple airline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/rainbow_parentheses.vim'
-
+" Autocomplete and syntax highlighting
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer'  }
+Plug 'alvan/vim-closetag' " Autoclose html tags
 Plug 'sheerun/vim-polyglot' " More syntax highlighting
 Plug 'tpope/vim-rails' " Better RoR
 Plug 'mattn/emmet-vim' " HTML snippets
@@ -118,4 +121,13 @@ hi CursorLine term=bold cterm=bold guibg=NONE ctermbg=NONE
 hi Normal guibg=NONE ctermbg=NONE
 " Cursorline for opaque terminal
 "hi CursorLine term=bold cterm=bold guibg=Grey40
+
+""" YCM
+" Start autocompletion after 4 chars
+"let g:ycm_min_num_of_chars_for_completion = 4
+"let g:ycm_min_num_identifier_candidate_chars = 4
+let g:ycm_enable_diagnostic_highlighting = 0
+" Don't show YCM's preview window [ I find it really annoying ]
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
 
