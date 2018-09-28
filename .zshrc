@@ -105,15 +105,21 @@ alias 'gp=git push'
 alias 'gpl=git pull'
 alias 'gsync=git pull; git push'
 alias 'gd=git diff'
+alias 'gdc=git diff --cached'
 alias 'gi=git init'
 alias 'gl=git log'
 alias 'gr=git reset'
+alias 'grv=git revert'
 alias 'gch=git checkout'
 alias 'gm=git merge'
 alias 'gb=git branch'
+alias 'gst=git stash'
+alias 'gstsh=git stash show -p'
+alias 'gstp=git stash pop'
+alias 'gstl=git stash list'
 # Misc
 alias 'lol=lolcat'
-alias 'node=nodejs'
+alias 'nyancat=telnet nyancat.dakko.us'
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
