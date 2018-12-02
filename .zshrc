@@ -85,13 +85,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
 # ALIASES
 # tmux
 alias 't=tmux'
-# Python
-alias 'python=python3' # Python 3
-alias 'py=python' # Python 2
-alias 'pip=pip3'
 # Youtube-dl
 alias 'youtube-dla=youtube-dl --extract-audio --audio-format mp3 --no-playlist'
 alias 'youtube-dlap=youtube-dl --extract-audio --audio-format mp3'
@@ -99,6 +96,7 @@ alias 'youtube-dlap=youtube-dl --extract-audio --audio-format mp3'
 alias 'g=git'
 alias 'gs=git status'
 alias 'ga=git add'
+alias 'a=git add'
 alias 'gc=git commit'
 alias 'gcm=git commit -m'
 alias 'gp=git push'
@@ -109,16 +107,21 @@ alias 'gdc=git diff --cached'
 alias 'gi=git init'
 alias 'gl=git log'
 alias 'gr=git reset'
+alias 'grb=git rebase'
 alias 'grv=git revert'
 alias 'gch=git checkout'
 alias 'gm=git merge'
 alias 'gb=git branch'
 alias 'gst=git stash'
+alias 'gsts=git stash save'
 alias 'gstsh=git stash show -p'
 alias 'gstp=git stash pop'
 alias 'gstl=git stash list'
 # Misc
 alias 'lol=lolcat'
+alias 'python=python3'
+alias 'py=python3'
+alias 'pip=pip3'
 alias 'nyancat=telnet nyancat.dakko.us'
 
 # Go
