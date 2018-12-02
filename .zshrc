@@ -7,7 +7,7 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 # Good themes: fino (Pipe), josh (Lightning Bolt)
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -143,5 +143,5 @@ DISABLE_AUTO_TITLE=true
 stty -ixon
 
 # STARTUP
-fortune | cowsay -f stegosaurus | lolcat
-
+#fortune | cowsay -f stegosaurus | lolcat
+screenfetch # Distro logo and machine specs
