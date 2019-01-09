@@ -1,5 +1,5 @@
 """ PLUGINS (Using Vim-plug)
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 " Utilities
 Plug 'SirVer/ultisnips' " Code snippets
@@ -20,7 +20,7 @@ Plug 'vim-airline/vim-airline' " A simple airline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Autocomplete and syntax highlighting
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer'  }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 Plug 'alvan/vim-closetag' " Autoclose html tags
 Plug 'sheerun/vim-polyglot' " More syntax highlighting
 Plug 'tpope/vim-rails' " Better RoR
