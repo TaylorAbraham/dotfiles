@@ -2,13 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/logan/.oh-my-zsh
+  export ZSH=/home/oops/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
-# Good themes: fino (Pipe), josh (Lightning Bolt)
+ZSH_THEME="josh"
+# Good themes: fino (Pipe), josh (Lightning Bolt), agnoster
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -85,56 +85,18 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
 
-# ALIASES
-# tmux
-alias 't=tmux'
-# Youtube-dl
-alias 'youtube-dla=youtube-dl --extract-audio --audio-format mp3 --no-playlist'
-alias 'youtube-dlap=youtube-dl --extract-audio --audio-format mp3'
-# Git
-alias 'g=git'
-alias 'gs=git status'
-alias 'ga=git add'
-alias 'a=git add'
-alias 'gc=git commit'
-alias 'gcm=git commit -m'
-alias 'gp=git push'
-alias 'gpl=git pull'
-alias 'gsync=git pull; git push'
-alias 'gd=git diff'
-alias 'gdc=git diff --cached'
-alias 'gi=git init'
-alias 'gl=git log'
-alias 'gr=git reset'
-alias 'grb=git rebase'
-alias 'grv=git revert'
-alias 'gch=git checkout'
-alias 'gm=git merge'
-alias 'gb=git branch'
-alias 'gst=git stash'
-alias 'gsts=git stash save'
-alias 'gstsh=git stash show -p'
-alias 'gstp=git stash pop'
-alias 'gstl=git stash list'
-# Misc
-alias 'lol=lolcat'
-alias 'python=python3'
-alias 'py=python3'
-alias 'pip=pip3'
-alias 'nyancat=telnet nyancat.dakko.us'
 
 # Go
-export PATH=$PATH:/usr/local/go/bin
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/dev/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # Terminal color mode
 set t_Co=256
-
-# virtualenv and virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export WORKON_HOME=$HOME/.virtualenvs
-source /home/logan/.local/bin/virtualenvwrapper.sh
 
 # Disable tmux windows from auto changing names
 DISABLE_AUTO_TITLE=true

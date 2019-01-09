@@ -3,7 +3,7 @@
 # Dotfile paths
 dir=~/dotfiles
 backupdir=~/dotfiles_old
-dotfiles=".zshrc .tmux.conf .vimrc"
+dotfiles=".zshrc .bash_aliases .vimrc .tmux.conf"
 
 # Make backup folder
 echo "Creating $olddir for current dotfiles backup..."
