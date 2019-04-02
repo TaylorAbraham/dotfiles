@@ -1,5 +1,6 @@
 # tmux
 alias 't=tmux'
+alias 'ta=tmux attach-session'
 # Youtube-dl
 alias 'youtube-dla=youtube-dl --extract-audio --audio-format mp3 --no-playlist'
 alias 'youtube-dlap=youtube-dl --extract-audio --audio-format mp3'
@@ -27,10 +28,13 @@ alias 'gst=git stash'
 alias 'gsts=git stash save'
 alias 'gstsh=git stash show -p'
 alias 'gstp=git stash pop'
+alias 'gstd=git stash drop'
 alias 'gstl=git stash list'
-# Misc
+# Program aliases
+alias 'suu=sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
 alias 'lol=lolcat'
 alias 'python=python3'
 alias 'py=python3'
 alias 'pip=pip3'
+alias 'rs=redshift'
 
