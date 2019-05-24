@@ -1,0 +1,7 @@
+[pager]
+	branch = false
+[user]
+	email = Ryan_JA@live.ca
+	name = Ryan Abraham
+[push]
+	default = current
