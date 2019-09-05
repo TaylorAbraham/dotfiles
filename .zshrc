@@ -88,6 +88,9 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
+if [ -f ~/.private_aliases ]; then
+  . ~/.private_aliases
+fi
 
 
 # Go
