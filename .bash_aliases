@@ -31,10 +31,13 @@ alias 'gstp=git stash pop'
 alias 'gstd=git stash drop'
 alias 'gstl=git stash list'
 # Program aliases
-alias 'suu=sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
 alias 'lol=lolcat'
 alias 'python=python3'
 alias 'py=python3'
 alias 'pip=pip3'
 alias 'rs=redshift'
+alias 'vi=vim'
+alias 'cb=xclip -sel c'
+# Bash commands
+alias 'clear=clear && neofetch'
 
