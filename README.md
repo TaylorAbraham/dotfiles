@@ -12,6 +12,7 @@ cd dotfiles
 These notes are primarily for my own reference, for easily setting up my OS
 
 ## Arch Installation
+https://wiki.archlinux.org/index.php/installation_guide
 - Use WPA Supplicant for connecting to wifi
 
 ## Brightness keys not working
