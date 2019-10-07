@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/rain/.oh-my-zsh
+  export ZSH=/home/pi/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -52,6 +52,7 @@ ZSH_THEME="josh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
+#plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,6 +97,9 @@ fi
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/dev/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+# JIRA
+export JIRA_BINARIES="/home/jira/atlassian-jira-core-8.3.2-standalone"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
