@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Utilities
-Plug 'SirVer/ultisnips' " Code snippets
+" Plug 'SirVer/ultisnips' " Code snippets
 Plug 'godlygeek/csapprox'
 Plug 'tpope/vim-surround' " Fix surroundings
 Plug 'jiangmiao/auto-pairs' " Autocomplete surroundings
@@ -20,7 +20,7 @@ Plug 'vim-airline/vim-airline' " A simple airline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Autocomplete and syntax highlighting
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 Plug 'alvan/vim-closetag' " Autoclose html tags
 Plug 'sheerun/vim-polyglot' " More syntax highlighting
 Plug 'tpope/vim-rails' " Better RoR

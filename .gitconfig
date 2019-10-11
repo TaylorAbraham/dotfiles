@@ -5,3 +5,5 @@
 	name = Ryan Abraham
 [push]
 	default = current
+[core]
+	editor = vim
