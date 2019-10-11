@@ -118,3 +118,5 @@ stty -ixon
 # STARTUP
 #fortune | cowsay -f stegosaurus | lolcat
 neofetch # Distro logo and machine specs
+source /usr/share/nvm/init-nvm.sh
+rs -PO 4000
