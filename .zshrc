@@ -98,9 +98,6 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/dev/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-# JIRA
-export JIRA_BINARIES="/home/jira/atlassian-jira-core-8.3.2-standalone"
-
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
