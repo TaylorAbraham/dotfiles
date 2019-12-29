@@ -94,7 +94,6 @@ fi
 
 
 # Go
-export GOROOT=/usr/local/go
 export GOPATH=$HOME/dev/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
