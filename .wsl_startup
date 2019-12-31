@@ -1,0 +1,3 @@
+# Fix mounting file permissions so that SSH keys aren't 0777 permissions
+sudo umount /mnt/c
+sudo mount -t drvfs C: /mnt/c -o metadata
