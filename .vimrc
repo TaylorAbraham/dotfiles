@@ -1,32 +1,68 @@
-""" PLUGINS (Using Vim-plug)
-call plug#begin('~/.vim/plugged')
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 " Utilities
-" Plug 'SirVer/ultisnips' " Code snippets
-Plug 'godlygeek/csapprox'
-Plug 'tpope/vim-surround' " Fix surroundings
-Plug 'jiangmiao/auto-pairs' " Autocomplete surroundings
-Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
-Plug 'roxma/vim-tmux-clipboard'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'tpope/vim-commentary' " Easy comments
-Plug 'scrooloose/nerdtree' " Folder hierarchy tree
+" Plugin 'SirVer/ultisnips' " Code snippets
+Plugin 'godlygeek/csapprox'
+Plugin 'tpope/vim-surround' " Fix surroundings
+Plugin 'jiangmiao/auto-pairs' " Autocomplete surroundings
+Plugin 'easymotion/vim-easymotion'
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-fuzzy.vim'
+Plugin 'roxma/vim-tmux-clipboard'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'tpope/vim-commentary' " Easy comments
+" Plugin 'scrooloose/nerdtree' " Folder hierarchy tree
 " Colors and themes
-Plug 'rafi/awesome-vim-colorschemes' " Collection of colorschemes
-Plug 'hdima/python-syntax' " Better Python syntax highlighting
-Plug 'vim-airline/vim-airline' " A simple airline
-Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/rainbow_parentheses.vim'
+Plugin 'rafi/awesome-vim-colorschemes' " Collection of colorschemes
+Plugin 'hdima/python-syntax' " Better Python syntax highlighting
+Plugin 'vim-airline/vim-airline' " A simple airline
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'junegunn/rainbow_parentheses.vim'
 " Autocomplete and syntax highlighting
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
-Plug 'alvan/vim-closetag' " Autoclose html tags
-Plug 'sheerun/vim-polyglot' " More syntax highlighting
-Plug 'tpope/vim-rails' " Better RoR
-Plug 'mattn/emmet-vim' " HTML snippets
+" Plugin 'Valloric/YouCompleteMe', { 'do': './install.py'  }
+Plugin 'alvan/vim-closetag' " Autoclose html tags
+Plugin 'sheerun/vim-polyglot' " More syntax highlighting
+Plugin 'tpope/vim-rails' " Better RoR
+Plugin 'mattn/emmet-vim' " HTML snippets
 
-call plug#end()
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
 
 
 """ KEY BINDINGS
@@ -85,16 +121,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "
 
 set ttimeoutlen=10 " Faster to exit insert mode
 
-" NERDTree
-" Toggle NERDTree with CTRL+N
-map <C-n> :NERDTreeToggle<CR>
-" Open NERDTree when opening folder
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-" Open NERDTree when opening empty file
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 """ THEME AND VISUALS
 set background=dark
 let g:gruvbox_italic=0
@@ -130,4 +156,3 @@ let g:ycm_enable_diagnostic_highlighting = 0
 " Don't show YCM's preview window [ I find it really annoying ]
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
-

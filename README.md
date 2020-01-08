@@ -20,6 +20,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ## Important utilities
 ```
 sudo apt install -y tmux inotify-tools ruby-dev
+vundle
 ```
 
 ## "Important" utilities
