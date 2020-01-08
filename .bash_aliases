@@ -40,4 +40,5 @@ alias 'vi=vim'
 alias 'cb=xclip -sel c'
 # Bash commands
 alias 'clear=clear && neofetch'
+alias 'suu=sudo apt update -y && sudo apt upgrade -y'
 

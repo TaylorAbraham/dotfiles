@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=~/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -95,15 +95,6 @@ if [ -f ~/.wsl_startup ]; then
   . ~/.wsl_startup
 fi
 
-# Go
-export GOPATH=$HOME/dev/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Terminal color mode
 set t_Co=256
 
@@ -116,4 +107,3 @@ stty -ixon
 # STARTUP
 #fortune | cowsay -f stegosaurus | lolcat
 neofetch # Distro logo and machine specs
-source /usr/share/nvm/init-nvm.sh
