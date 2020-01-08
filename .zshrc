@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/rain/.oh-my-zsh
+  export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -91,7 +91,9 @@ fi
 if [ -f ~/.private_aliases ]; then
   . ~/.private_aliases
 fi
-
+if [ -f ~/.wsl_startup ]; then
+  . ~/.wsl_startup
+fi
 
 # Go
 export GOPATH=$HOME/dev/go
@@ -115,4 +117,3 @@ stty -ixon
 #fortune | cowsay -f stegosaurus | lolcat
 neofetch # Distro logo and machine specs
 source /usr/share/nvm/init-nvm.sh
-rs -PO 4000
