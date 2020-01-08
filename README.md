@@ -8,19 +8,38 @@ cd dotfiles
 ./dot-install.sh
 ```
 
+# General Post-Installation
+
+## Zsh + OhMyZsh
+```
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+## Important utilities
+```
+sudo apt install -y tmux inotify-tools ruby-dev
+```
+
+## "Important" utilities
+```
+sudo apt install -y neofetch lolcat cowsay fortune-mod youtube-dl
+```
+
+## SSH Keys
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
 # WSL Installation
-1. Install a Linux distro and Terminal through the Microsoft Store
+1. Through the Microsoft Store, install a Linux distro of your choice and Windows Terminal
 2. Follow in full: https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
 3. Open Terminal settings and set Ubuntu to the default, and fix the starting directory to be your WSL home instead of your Windows home
 ```
 "startingDirectory" : "//wsl$/Ubuntu/home/<USERNAME>"
 ```
-4. Install some important utilities, and Zsh + OhMyZsh
-```
-sudo apt update && sudo apt upgrade -y
-sudo apt install -y zsh inotify-tools
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
+4. Follow instructions above for installing Zsh + OhMyZsh
 5. Set up Windows ssh keys in a Powershell prompt, and add them to GitHub
 ```
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
@@ -49,11 +68,6 @@ sudo su
 visudo /etc/sudoers
 ```
 And add `Defaults:<USERNAME> !tty_tickets`
-
-10. Install "important" utilities "critical" to developer productivity
-```
-sudo apt install -y neofetch lolcat cowsay fortune-mod
-```
 
 **Install complete!**
 

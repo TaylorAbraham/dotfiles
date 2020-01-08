@@ -1,6 +1,15 @@
-# tmux
+# Program aliases
+alias 'lol=lolcat'
+alias 'python=python3'
+alias 'py=python3'
+alias 'pip=pip3'
+alias 'rs=redshift'
+alias 'vi=vim'
 alias 't=tmux'
-alias 'ta=tmux attach-session'
+# Bash commands
+alias 'clear=clear && neofetch'
+alias 'suu=sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
+alias 'cb=xclip -sel c'
 # Youtube-dl
 alias 'youtube-dla=youtube-dl --extract-audio --audio-format mp3 --no-playlist'
 alias 'youtube-dlap=youtube-dl --extract-audio --audio-format mp3'
@@ -30,15 +39,7 @@ alias 'gstsh=git stash show -p'
 alias 'gstp=git stash pop'
 alias 'gstd=git stash drop'
 alias 'gstl=git stash list'
-# Program aliases
-alias 'lol=lolcat'
-alias 'python=python3'
-alias 'py=python3'
-alias 'pip=pip3'
-alias 'rs=redshift'
-alias 'vi=vim'
-alias 'cb=xclip -sel c'
-# Bash commands
-alias 'clear=clear && neofetch'
-alias 'suu=sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
-
+# PLUGIN ALIASES
+# These aliases are provided by OhMyZsh plugins
+# tmux - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases
+# Git - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases

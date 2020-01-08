@@ -8,7 +8,8 @@ export ZSH=~/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="josh"
-# Good themes: fino (Pipe), josh (Lightning Bolt), agnoster
+# Good themes: josh (Lightning Bolt)
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -51,8 +52,12 @@ ZSH_THEME="josh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-#plugins=(zsh-autosuggestions)
+plugins=(colored-man-pages git gitignore themes tmux vundle web-search)
+# git - Adds aliases https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases
+# gitignore - Allows `gi list`, `gi [TEMPLATENAME]`, and `gi [TEMPLATENAME] >> .gitignore`
+# themes - Allows `lstheme` and `theme <THEME>`
+# tmux - Adds aliases https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases
+# web-search - `google X`, `stackoverflow X`, etc
 
 source $ZSH/oh-my-zsh.sh
 
@@ -80,10 +85,6 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
