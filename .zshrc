@@ -52,9 +52,10 @@ ZSH_THEME="josh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages git gitignore themes tmux vundle web-search)
+plugins=(colored-man-pages git gitignore jump themes tmux vundle web-search)
 # git - Adds aliases https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases
 # gitignore - Allows `gi list`, `gi [TEMPLATENAME]`, and `gi [TEMPLATENAME] >> .gitignore`
+# jump - Allows `jump <MARK>`, `mark <MARK>`, `unmark <MARK>`, and `marks`
 # themes - Allows `lstheme` and `theme <THEME>`
 # tmux - Adds aliases https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases
 # web-search - `google X`, `stackoverflow X`, etc

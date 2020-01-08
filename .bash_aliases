@@ -1,10 +1,11 @@
 # Program aliases
 alias 'lol=lolcat'
-alias 'python=python3'
-alias 'py=python3'
 alias 'pip=pip3'
+alias 'py=python3'
+alias 'python=python3'
 alias 'rs=redshift'
 alias 'vi=vim'
+alias 'j=jump'
 alias 't=tmux'
 # Bash commands
 alias 'clear=clear && neofetch'
