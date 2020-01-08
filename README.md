@@ -3,15 +3,54 @@ My personal dotfiles and an installer script to set them up
 
 # Installation
 ```
-git clone https://github.com/RyanAbraham/dotfiles.git
+git clone git@github.com:RyanAbraham/dotfiles.git
 cd dotfiles
 ./dot-install.sh
 ```
 
-# Personal Notes
-These notes are primarily for my own reference, for easily setting up my OS
+# WSL Installation
+1. Install a Linux distro and Terminal through the Microsoft Store
+2. Follow in full: https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
+3. Open Terminal settings and set Ubuntu to the default, and fix the starting directory to be your WSL home instead of your Windows home
+```
+"startingDirectory" : "//wsl$/Ubuntu/home/<USERNAME>"
+```
+4. Install some important utilities, and Zsh + OhMyZsh
+```
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y zsh inotify-tools
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+5. Set up Windows ssh keys in a Powershell prompt, and add them to GitHub
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+cat C:\Users\ryan_\.ssh\id_rsa.pub | clip
+```
+6. Set up WSL ssh keys and fix private key permissions (NOTE: cp is used instead of making a symlink because this allows file permissions of your private key to be fixed)
+```
+cp -r /mnt/c/Users/<USERNAME>/.ssh ~/.ssh
+chmod 600 ~/.ssh/id_rsa
+```
+7. Install dotfiles
+```
+cd ~
+git clone git@github.com:RyanAbraham/dotfiles.git
+cd dotfiles
+./dot-install.sh
+```
+8. Install nvm, then Node and npm
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+nvm i --lts
+```
+9. Install "important" utilities "critical" to developer productivity
+```
+sudo apt install -y neofetch lolcat cowsay fortune-mod
+```
 
-## Arch Installation
+**Install complete!**
+
+# Arch Installation
 https://wiki.archlinux.org/index.php/installation_guide
 - Use WPA Supplicant for connecting to wifi
 - Mounts are as follows:
@@ -28,4 +67,3 @@ Edit `/etc/default/grub`, and in it add `acpi_osi=` to the end of the `GRUB_CMDL
 - This will set you to have normal access to the /windows mount as if it was a home directory
 - Regenerate fstab with genfstab
     - Make sure to mount other file systems
-
