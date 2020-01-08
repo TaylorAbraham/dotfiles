@@ -38,12 +38,19 @@ git clone git@github.com:RyanAbraham/dotfiles.git
 cd dotfiles
 ./dot-install.sh
 ```
-8. Install nvm, then Node and npm
+8. Install Node LTS (nvm is currently very bugged with WSL 2)
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 nvm i --lts
 ```
-9. Install "important" utilities "critical" to developer productivity
+9. Fix tmux re-prompting you for sudo password by disabling tty tickets
+```
+sudo su
+visudo /etc/sudoers
+```
+And add `Defaults:<USERNAME> !tty_tickets`
+
+10. Install "important" utilities "critical" to developer productivity
 ```
 sudo apt install -y neofetch lolcat cowsay fortune-mod
 ```
