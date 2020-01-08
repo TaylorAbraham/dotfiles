@@ -1,12 +1,12 @@
 # Program aliases
+alias 'j=jump'
 alias 'lol=lolcat'
 alias 'pip=pip3'
 alias 'py=python3'
 alias 'python=python3'
 alias 'rs=redshift'
-alias 'vi=vim'
-alias 'j=jump'
 alias 't=tmux'
+alias 'vi=vim'
 # Bash commands
 alias 'clear=clear && neofetch'
 alias 'suu=sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
