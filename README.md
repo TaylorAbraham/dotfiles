@@ -1,14 +1,14 @@
 # Overview
 My personal dotfiles and an installer script to set them up
 
-# Installation
+# Dotfile Installation
 ```
 git clone git@github.com:RyanAbraham/dotfiles.git
 cd dotfiles
 ./dot-install.sh
 ```
 
-# General Post-Installation
+# General Post-OS Install/Setup
 
 ## Zsh + OhMyZsh
 ```
@@ -32,6 +32,9 @@ sudo apt install -y neofetch lolcat cowsay fortune-mod youtube-dl
 ```
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
+
+## npm Global Without sudo
+https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
 
 # WSL Installation
 1. Through the Microsoft Store, install a Linux distro of your choice and Windows Terminal
