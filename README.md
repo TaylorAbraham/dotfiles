@@ -64,7 +64,7 @@ cd dotfiles
 8. Install Node LTS (nvm is currently very bugged with WSL 2)
 ```
 curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt install -y nodejs
 ```
 9. Fix tmux re-prompting you for sudo password by disabling tty tickets
 ```
