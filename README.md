@@ -19,7 +19,46 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ## Important utilities
 ```
-sudo apt install -y tmux inotify-tools ruby-dev texlive
+sudo apt install -y tmux inotify-tools ruby-dev
+vundle
+```
+
+## "Important" utilities
+```
+sudo apt install -y neofetch lolcat cowsay fortune-mod youtube-dl
+```
+
+## SSH Keys
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+## npm Global Without sudo
+https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+
+# WSL Installation
+1. Through the Microsoft Store, install a Linux distro of your choice and Windows Terminal
+2. Follow in full: https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
+3. Open Terminal settings and set Ubuntu to the default, and fix the starting directory to be your WSL home instead of your Windows home
+```
+"startingDirectory" : "//wsl$/Ubuntu/home/<USERNAME>"
+```
+4. Follow instructions above for installing Zsh + OhMyZsh
+5. Set up Windows ssh keys in a Powershell prompt, and add them to GitHub
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+cat C:\Users\ryan_\.ssh\id_rsa.pub | clip
+```
+6. Set up WSL ssh keys and fix private key permissions (NOTE: cp is used instead of making a symlink because this allows file permissions of your private key to be fixed)
+```
+cp -r /mnt/c/Users/<USERNAME>/.ssh ~/.ssh
+chmod 600 ~/.ssh/id_rsa
+```
+7. Install dotfiles
+```
+cd ~
+git clone git@github.com:RyanAbraham/dotfiles.git
+cd dotfiles
 ./dot-install.sh
 ```
 8. Install Node LTS (nvm is currently very bugged with WSL 2)
