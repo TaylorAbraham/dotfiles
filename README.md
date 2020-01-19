@@ -18,8 +18,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 ## Important utilities
+`build-essential` installs make tools
 ```
-sudo apt install -y tmux inotify-tools ruby-dev
+sudo apt install -y tmux inotify-tools ruby-dev build-essential
 vundle
 ```
 
