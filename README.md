@@ -25,7 +25,7 @@ vundle
 
 ## "Important" utilities
 ```
-sudo apt install -y neofetch lolcat cowsay fortune-mod youtube-dl
+sudo apt install -y neofetch lolcat cowsay fortune-mod
 ```
 
 ## SSH Keys
