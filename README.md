@@ -73,6 +73,9 @@ sudo su
 visudo /etc/sudoers
 ```
 And add `Defaults:<USERNAME> !tty_tickets`
+10. Fix firewall rules for inbound WSL connections
+By default, the Windows Firewall will prevent any inbound connections to a server running on WSL 2. Fix WSL firewall rules with the script in the GitHub issue below. Make sure to follow his instructions and tick off "Run with highest privilege".
+https://github.com/microsoft/WSL/issues/4150#issuecomment-504209723
 
 **Install complete!**
 
