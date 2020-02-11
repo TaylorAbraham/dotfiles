@@ -3,7 +3,7 @@ My personal dotfiles and an installer script to set them up
 
 # Dotfile Installation
 ```
-git clone git@github.com:RyanAbraham/dotfiles.git
+git clone git@github.com:TaylorAbraham/dotfiles.git
 cd dotfiles
 ./dot-install.sh
 ```
@@ -58,7 +58,7 @@ chmod 600 ~/.ssh/id_rsa
 7. Install dotfiles
 ```
 cd ~
-git clone git@github.com:RyanAbraham/dotfiles.git
+git clone git@github.com:TaylorAbraham/dotfiles.git
 cd dotfiles
 ./dot-install.sh
 ```
