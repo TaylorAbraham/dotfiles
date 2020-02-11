@@ -1,37 +1,53 @@
 # Overview
 My personal dotfiles and an installer script to set them up
 
-# Installation
+- [Dotfile Installation](#dotfile-installation)
+- [General Post-OS Install/Setup](#general-post-os-installsetup)
+  * [Zsh + OhMyZsh](#zsh--ohmyzsh)
+  * [Important utilities](#important-utilities)
+  * ["Important" utilities](#important-utilities)
+  * [SSH Keys](#ssh-keys)
+  * [npm Global Without sudo](#npm-global-without-sudo)
+- [WSL Installation](#wsl-installation)
+- [Arch Installation](#arch-installation)
+  * [Brightness keys not working](#brightness-keys-not-working)
+  * [Mounting Windows with proper permissions](#mounting-windows-with-proper-permissions)
+
+# Dotfile Installation
 ```
-git clone git@github.com:RyanAbraham/dotfiles.git
+git clone git@github.com:TaylorAbraham/dotfiles.git
 cd dotfiles
 ./dot-install.sh
 ```
 
-# General Post-Installation
+# General Post-OS Install/Setup
 
 ## Zsh + OhMyZsh
 ```
-sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## Important utilities
+`build-essential` installs make tools
 ```
-sudo apt install -y tmux inotify-tools ruby-dev
+sudo apt install -y tmux inotify-tools ruby-dev build-essential
 vundle
 ```
 
 ## "Important" utilities
 ```
-sudo apt install -y neofetch lolcat cowsay fortune-mod youtube-dl
+sudo apt install -y neofetch lolcat cowsay fortune-mod
 ```
 
 ## SSH Keys
 ```
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
+
+## npm Global Without sudo
+https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
 
 # WSL Installation
 1. Through the Microsoft Store, install a Linux distro of your choice and Windows Terminal
@@ -40,7 +56,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 "startingDirectory" : "//wsl$/Ubuntu/home/<USERNAME>"
 ```
-4. Follow instructions above for installing Zsh + OhMyZsh
+4. Follow [instructions above](#zsh--ohmyzsh) for installing Zsh + OhMyZsh
 5. Set up Windows ssh keys in a Powershell prompt, and add them to GitHub
 ```
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
@@ -54,21 +70,23 @@ chmod 600 ~/.ssh/id_rsa
 7. Install dotfiles
 ```
 cd ~
-git clone git@github.com:RyanAbraham/dotfiles.git
+git clone git@github.com:TaylorAbraham/dotfiles.git
 cd dotfiles
 ./dot-install.sh
 ```
 8. Install Node LTS (nvm is currently very bugged with WSL 2)
 ```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
-nvm i --lts
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+sudo apt install -y nodejs
 ```
-9. Fix tmux re-prompting you for sudo password by disabling tty tickets
+9. Fix tmux re-prompting you for sudo password by disabling tty tickets. Open sudoers and add `Defaults:<USERNAME> !tty_tickets`
 ```
+sudo update-alternatives --config editor
 sudo su
 visudo /etc/sudoers
 ```
-And add `Defaults:<USERNAME> !tty_tickets`
+10. Install utilities [listed above](#important-utilities)
+10. Fix firewall rules for inbound WSL connections. By default, the Windows Firewall will prevent any inbound connections to a server running on WSL 2. Fix WSL firewall rules with [the script in this comment](https://github.com/microsoft/WSL/issues/4150#issuecomment-504209723). Make sure to follow the instructions and tick off "Run with highest privilege" at the first screen of making the task.
 
 **Install complete!**
 
