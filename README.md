@@ -86,7 +86,7 @@ sudo su
 visudo /etc/sudoers
 ```
 10. Install utilities [listed above](#important-utilities)
-10. Fix firewall rules for inbound WSL connections. By default, the Windows Firewall will prevent any inbound connections to a server running on WSL 2. Fix WSL firewall rules with the script in the [this comment](https://github.com/microsoft/WSL/issues/4150#issuecomment-504209723). Make sure to follow the instructions and tick off "Run with highest privilege" at the first screen of making the task.
+10. Fix firewall rules for inbound WSL connections. By default, the Windows Firewall will prevent any inbound connections to a server running on WSL 2. Fix WSL firewall rules with [the script in this comment](https://github.com/microsoft/WSL/issues/4150#issuecomment-504209723). Make sure to follow the instructions and tick off "Run with highest privilege" at the first screen of making the task.
 
 **Install complete!**
 
