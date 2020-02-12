@@ -70,9 +70,9 @@ chmod 600 ~/.ssh/id_rsa
 7. Install dotfiles
 ```
 cd ~
-git clone git@github.com:TaylorAbraham/dotfiles.git
-cd dotfiles
-./dot-install.sh
+git clone git@github.com:TaylorAbraham/dotfiles-wsl2.git
+mv dotfiles-wsl2 dotfiles
+cd dotfiles && ./dot-install.sh
 ```
 8. Install Node LTS (nvm is currently very bugged with WSL 2)
 ```
