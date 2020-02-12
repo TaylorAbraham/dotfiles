@@ -1,5 +1,5 @@
 # Overview
-My personal dotfiles and an installer script to set them up
+My personal dotfiles and an installer script to set them up. In this guide I reference my unix username `tay` and my Windows account folder name `taylo`, so change them to your folder names accordingly.
 
 - [Dotfile Installation](#dotfile-installation)
 - [General Post-OS Install/Setup](#general-post-os-installsetup)
@@ -54,17 +54,17 @@ https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
 2. Follow in full: https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
 3. Open Terminal settings and set Ubuntu to the default, and fix the starting directory to be your WSL home instead of your Windows home
 ```
-"startingDirectory" : "//wsl$/Ubuntu/home/<USERNAME>"
+"startingDirectory" : "//wsl$/Ubuntu/home/tay"
 ```
 4. Follow [instructions above](#zsh--ohmyzsh) for installing Zsh + OhMyZsh
 5. Set up Windows ssh keys in a Powershell prompt, and add them to GitHub
 ```
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-cat C:\Users\ryan_\.ssh\id_rsa.pub | clip
+cat C:\Users\taylo\.ssh\id_rsa.pub | clip
 ```
 6. Set up WSL ssh keys and fix private key permissions (NOTE: cp is used instead of making a symlink because this allows file permissions of your private key to be fixed)
 ```
-cp -r /mnt/c/Users/<USERNAME>/.ssh ~/.ssh
+cp -r /mnt/c/Users/taylo/.ssh ~/.ssh
 chmod 600 ~/.ssh/id_rsa
 ```
 7. Install dotfiles
@@ -79,7 +79,7 @@ cd dotfiles
 curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
-9. Fix tmux re-prompting you for sudo password by disabling tty tickets. Open sudoers and add `Defaults:<USERNAME> !tty_tickets`
+9. Fix tmux re-prompting you for sudo password by disabling tty tickets. Open sudoers and add `Defaults:tay !tty_tickets`
 ```
 sudo update-alternatives --config editor
 sudo su
