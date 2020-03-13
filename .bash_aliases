@@ -1,16 +1,17 @@
 # Program aliases
 alias 'j=jump'
-alias 'lol=lolcat'
 alias 'pip=pip3'
 alias 'py=python3'
 alias 'python=python3'
 alias 'rs=redshift'
 alias 't=tmux'
+alias 'tas=tmux attach-session -t'
+alias 'tks=tmux kill-session -t'
 alias 'vi=vim'
 # Bash commands
 alias 'clear=clear && neofetch'
+alias 'lol=lolcat'
 alias 'suu=sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
-alias 'cb=xclip -sel c'
 # Youtube-dl
 alias 'youtube-dla=youtube-dl --extract-audio --audio-format mp3 --no-playlist'
 alias 'youtube-dlap=youtube-dl --extract-audio --audio-format mp3'
