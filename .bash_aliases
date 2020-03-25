@@ -1,5 +1,5 @@
 # Program aliases
-alias 'fs=firebase'
+alias 'fire=firebase'
 alias 'j=jump'
 alias 'pip=pip3'
 alias 'py=python3'
