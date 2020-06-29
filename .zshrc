@@ -109,5 +109,5 @@ DISABLE_AUTO_TITLE=true
 stty -ixon
 
 # STARTUP
-fortune | cowsay -f stegosaurus | lolcat
-#neofetch # Distro logo and machine specs
+#fortune | cowsay -f stegosaurus | lolcat
+neofetch # Distro logo and machine specs
