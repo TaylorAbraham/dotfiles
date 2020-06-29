@@ -52,9 +52,11 @@ https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
 # WSL Installation
 1. Through the Microsoft Store, install a Linux distro of your choice and Windows Terminal
 2. Follow in full: https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
-3. Open Terminal settings and set Ubuntu to the default, and fix the starting directory to be your WSL home instead of your Windows home
+3. Open Terminal settings and set Ubuntu to the default, and fix the starting directory to be your WSL home instead of your Windows home. Optionally, add a background.
 ```
-"startingDirectory" : "//wsl$/Ubuntu/home/tay"
+"startingDirectory" : "//wsl$/Ubuntu-20.04/home/tay",
+"backgroundImage": "C:\\Users\\ryan_\\OneDrive\\Pictures\\Backgrounds\\Wooloo.jpg",
+"backgroundImageOpacity": 0.3
 ```
 4. Follow [instructions above](#zsh--ohmyzsh) for installing Zsh + OhMyZsh
 5. Set up Windows ssh keys in a Powershell prompt, and add them to GitHub
