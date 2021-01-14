@@ -88,7 +88,7 @@ sudo su
 visudo /etc/sudoers
 ```
 10. Install utilities [listed above](#important-utilities)
-11. Fix firewall rules for inbound WSL connections. By default, the Windows Firewall will prevent any inbound connections to a server running on WSL 2. Fix WSL firewall rules with [the script in this comment](https://github.com/microsoft/WSL/issues/4150#issuecomment-504209723). Make sure to follow the instructions and tick off "Run with highest privilege" at the first screen of making the task. The command will be "powershell" with arguments something like "-File C:\Users\ryan_\Scripts\wslbridge.ps1"
+11. Fix firewall rules for inbound WSL connections. By default, the Windows Firewall will prevent any inbound connections to a server running on WSL 2. Fix WSL firewall rules with [the script in this comment](https://github.com/microsoft/WSL/issues/4150#issuecomment-504209723). Make sure to follow the instructions and tick off "Run with highest privilege" at the first screen of making the task. The command will be `powershell` with arguments something like `-File C:\Users\ryan_\Scripts\wslbridge.ps1`
 
 Extra resources are available at https://nickymeuleman.netlify.com/blog/linux-on-windows-wsl2-zsh-docker and https://nickymeuleman.netlify.com/blog/gui-on-wsl2-cypress
 
