@@ -3,7 +3,7 @@
 # WSL by default port forwards services to localhost on Windows, but
 # this allows access of WSL servers from LAN, or WAN with router port forwarding
 
-$remoteport = bash.exe -c "ifconfig eth0 | grep 'inet '"
+$remoteport = bash.exe -c "ip addr show eth0 | grep 'inet '"
 $found = $remoteport -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}';
 
 if( $found ){
@@ -16,7 +16,7 @@ if( $found ){
 #[Ports]
 
 #All the ports you want to forward separated by coma
-$ports=@(3000,5000,8000,8080,8081,19000,19001);
+$ports=@(3000,5000,8000,8080,8081,19000,19001,19002,19006);
 
 
 #[Static ip]
