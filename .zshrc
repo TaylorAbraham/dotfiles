@@ -110,4 +110,5 @@ stty -ixon
 
 # STARTUP
 #fortune | cowsay -f stegosaurus | lolcat
-neofetch # Distro logo and machine specs
+screenfetch # Distro logo and machine specs
+
