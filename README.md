@@ -54,8 +54,8 @@ https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
 2. Follow in full: https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
 3. Open Terminal settings and set Ubuntu to the default, and fix the starting directory to be your WSL home instead of your Windows home. Optionally, add a background.
 ```
-"startingDirectory" : "//wsl$/Ubuntu-20.04/home/tay",
-"backgroundImage": "C:\\Users\\ryan_\\OneDrive\\Pictures\\Backgrounds\\Wooloo.jpg",
+"startingDirectory" : "//wsl$/Ubuntu/home/tay",
+"backgroundImage": "C:\\Users\\Taylor\\OneDrive\\Pictures\\Backgrounds\\Wooloo.jpg",
 "backgroundImageOpacity": 0.3
 ```
 4. Follow [instructions above](#zsh--ohmyzsh) for installing Zsh + OhMyZsh
