@@ -62,24 +62,23 @@ https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
 5. Set up Windows ssh keys in a Powershell prompt, and add them to GitHub
 ```
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-cat C:\Users\taylo\.ssh\id_rsa.pub | clip
+cat C:\Users\Taylor\.ssh\id_rsa.pub | clip
 ```
 6. Set up WSL ssh keys and fix private key permissions (NOTE: cp is used instead of making a symlink because this allows file permissions of your private key to be fixed)
 ```
-cp -r /mnt/c/Users/taylo/.ssh ~/.ssh
+cp -r /mnt/c/Users/Taylor/.ssh ~/.ssh
 chmod 600 ~/.ssh/id_rsa
 ```
 7. Install dotfiles
 ```
 cd ~
-git clone git@github.com:TaylorAbraham/dotfiles-wsl2.git
-mv dotfiles-wsl2 dotfiles
+git clone git@github.com:TaylorAbraham/dotfiles.git
 cd dotfiles && ./dot-install.sh
 ```
-8. Install Node LTS (nvm is currently very bugged with WSL 2)
+8. Install Node via nvm
 ```
-curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-sudo apt install -y nodejs
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+nvm install lts
 ```
 9. Fix tmux re-prompting you for sudo password by disabling tty tickets. Open sudoers and add `Defaults:tay !tty_tickets`
 ```
