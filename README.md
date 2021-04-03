@@ -101,6 +101,12 @@ https://wiki.archlinux.org/index.php/installation_guide
     - mount /dev/nvme0n1p1 /mnt/boot/efi
     - mount /dev/nvme0n1p3 /mnt/windows
 
+## Set Arch to use local time
+Only do this if you are booting into Windows semi-often, as this method relies on Windows keeping your system time up to date
+```
+timedatectl set-local-rtc 1 --adjust-system-clock
+```
+
 ## Brightness keys not working
 Edit `/etc/default/grub`, and in it add `acpi_osi=` to the end of the `GRUB_CMDLINE_LINUX_DEFAULT` boot parameters. If that doesn't work, consult https://wiki.archlinux.org/index.php/intel_graphics#Backlight_is_not_adjustable
 
