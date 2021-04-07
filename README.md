@@ -119,3 +119,13 @@ Edit `/etc/default/grub`, and in it add `acpi_osi=` to the end of the `GRUB_CMDL
 - This will set you to have normal access to the /windows mount as if it was a home directory
 - Regenerate fstab with genfstab
     - Make sure to mount other file systems
+
+## Making a sudo user
+```
+pacman -S sudo
+useradd --createhome tay
+passwd tay
+usermod --append --groups wheel tay
+visudo
+```
+Uncomment the `%wheel ALL=(ALL) ALL` line and test with `su - tay`, then `whoami` and `sudo whoami`.
