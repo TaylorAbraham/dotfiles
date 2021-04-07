@@ -94,12 +94,15 @@ Extra resources are available at https://nickymeuleman.netlify.com/blog/linux-on
 **Install complete!**
 
 # Arch Installation
+
+Make a single empty partition in Windows for Arch but **DO NOT** format it.
+
 https://wiki.archlinux.org/index.php/installation_guide
-- Use WPA Supplicant for connecting to wifi
+
 - Mounts are as follows:
-    - mount /dev/nvme0n1p6 /mnt
-    - mount /dev/nvme0n1p1 /mnt/boot/efi
-    - mount /dev/nvme0n1p3 /mnt/windows
+    - For your empty partition that will be Arch: mount /dev/nvme0n1p6 /mnt
+    - For your EFI partition: mount /dev/nvme0n1p1 /mnt/boot/efi
+    - For your main windows filesystem: mount /dev/nvme0n1p3 /mnt/windows
 
 ## Set Arch to use local time
 Only do this if you are booting into Windows semi-often, as this method relies on Windows keeping your system time up to date
