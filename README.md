@@ -21,7 +21,7 @@ My personal dotfiles and an installer script to set them up. In this guide I ref
     + [Configure Spectacle](#configure-spectacle)
     + [Set Arch to use local time](#set-arch-to-use-local-time)
   * [Appendix A - Troubleshooting](#appendix-a---troubleshooting)
-  * [Brightness keys not working](#brightness-keys-not-working
+  * [Brightness keys not working](#brightness-keys-not-working)
 - [WSL Installation](#wsl-installation)
 
 # Dotfile Installation
