@@ -93,34 +93,31 @@ Extra resources are available at https://nickymeuleman.netlify.com/blog/linux-on
 
 **Install complete!**
 
-# Arch Installation
+# Arch Installation As a Dual Boot with Windows
+
+## Part 1 - Base Installation
 
 Make a single empty partition in Windows for Arch but **DO NOT** format it.
 
 https://wiki.archlinux.org/index.php/installation_guide
 
 - Mounts are as follows:
-    - For your empty partition that will be Arch: mount /dev/nvme0n1p6 /mnt
-    - For your EFI partition: mount /dev/nvme0n1p1 /mnt/boot/efi
-    - For your main windows filesystem: mount /dev/nvme0n1p3 /mnt/windows
+    - For your empty partition that will be Arch: `mount /dev/nvme0n1p6 /mnt`
+    - For your EFI partition: `mount /dev/nvme0n1p1 /mnt/boot/efi`
+    - For your main windows `filesystem: mount /dev/nvme0n1p3 /mnt/windows`
 
-## Set Arch to use local time
-Only do this if you are booting into Windows semi-often, as this method relies on Windows keeping your system time up to date
+## Part 2 - Once you're chroot'd and done the Arch wiki install guide
+
+### Install some utilities
 ```
-timedatectl set-local-rtc 1 --adjust-system-clock
+pacman -S vim ntfs-3g iwd
 ```
 
-## Brightness keys not working
-Edit `/etc/default/grub`, and in it add `acpi_osi=` to the end of the `GRUB_CMDLINE_LINUX_DEFAULT` boot parameters. If that doesn't work, consult https://wiki.archlinux.org/index.php/intel_graphics#Backlight_is_not_adjustable
+`ntfs-3g` allows Arch to mount the Windows filesystem once we reboot.
 
-## Mounting Windows with proper permissions
-- Figure out your user id
-- Mount with uid, gid set to yourself
-- This will set you to have normal access to the /windows mount as if it was a home directory
-- Regenerate fstab with genfstab
-    - Make sure to mount other file systems
+`iwd` gives access to `iwctl` and will let us get an internet connection if we need to troubleshoot later.
 
-## Making a sudo user
+### Making a sudo user
 ```
 pacman -S sudo
 useradd --createhome tay
@@ -129,3 +126,51 @@ usermod --append --groups wheel tay
 visudo
 ```
 Uncomment the `%wheel ALL=(ALL) ALL` line and test with `su - tay`, then `whoami` and `sudo whoami`.
+
+### Setting up a grub dual boot
+```
+pacman -S grub efibootmgr os-prober
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+We can verify that Windows is detected with `os-prober`
+
+### Installing KDE Plasma
+```
+pacman -S xorg plasma plasma-wayland-session kde-applications
+systemctl enable sddm.service
+systemctl enable NetworkManager.service
+```
+
+## Part 3 - Post-Installation
+
+### Install important utilities
+[Install Yay](https://github.com/Jguer/yay#installation), then install Chrome
+```
+yay -Syu google-chrome
+```
+
+### Configure virtual desktops
+
+![Screenshot of 2x2 desktop arrangement](https://i.imgur.com/Hrdfai3.png)
+
+`Shortcuts` -> `KWin`
+
+![Screenshot of shortcuts](https://i.imgur.com/yBVIyIK.png)
+
+### Configure Spectacle
+
+![Screenshot of Spectacle config](https://i.imgur.com/BTrmXXN.png)
+
+And set "Capture Rectangular Region" to `Print Screen`
+
+### Set Arch to use local time
+Only do this if you are booting into Windows semi-often, as this method relies on Windows keeping your system time up to date
+```
+timedatectl set-local-rtc 1 --adjust-system-clock
+```
+
+## Appendix A - Troubleshooting
+
+## Brightness keys not working
+Edit `/etc/default/grub`, and in it add `acpi_osi=` to the end of the `GRUB_CMDLINE_LINUX_DEFAULT` boot parameters. If that doesn't work, consult https://wiki.archlinux.org/index.php/intel_graphics#Backlight_is_not_adjustable
