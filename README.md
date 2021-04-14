@@ -56,6 +56,11 @@ sudo apt install -y neofetch lolcat cowsay fortune-mod
 ```
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
+## nvm
+https://github.com/nvm-sh/nvm#installing-and-updating
+```
+nvm install lts
+```
 
 ## npm Global Without sudo
 https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
@@ -168,19 +173,14 @@ cd ~
 git clone git@github.com:TaylorAbraham/dotfiles.git
 cd dotfiles && ./dot-install.sh
 ```
-8. Install Node via nvm
-```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-nvm install lts
-```
-9. Fix tmux re-prompting you for sudo password by disabling tty tickets. Open sudoers and add `Defaults:tay !tty_tickets`
+8. Fix tmux re-prompting you for sudo password by disabling tty tickets. Open sudoers and add `Defaults:tay !tty_tickets`
 ```
 sudo update-alternatives --config editor
 sudo su
 visudo /etc/sudoers
 ```
-10. Install utilities [listed above](#important-utilities)
-11. Fix firewall rules for inbound WSL connections. By default, the Windows Firewall will prevent any inbound connections to a server running on WSL 2. Fix WSL firewall rules with [the script in this comment](https://github.com/microsoft/WSL/issues/4150#issuecomment-504209723). Make sure to follow the instructions and tick off "Run with highest privilege" at the first screen of making the task. The command will be `powershell` with arguments something like `-File C:\Users\ryan_\Scripts\wslbridge.ps1`
+9. Install utilities [listed above](#important-utilities)
+10. Fix firewall rules for inbound WSL connections. By default, the Windows Firewall will prevent any inbound connections to a server running on WSL 2. Fix WSL firewall rules with [the script in this comment](https://github.com/microsoft/WSL/issues/4150#issuecomment-504209723). Make sure to follow the instructions and tick off "Run with highest privilege" at the first screen of making the task. The command will be `powershell` with arguments something like `-File C:\Users\ryan_\Scripts\wslbridge.ps1`
 
 Extra resources are available at https://nickymeuleman.netlify.com/blog/linux-on-windows-wsl2-zsh-docker and https://nickymeuleman.netlify.com/blog/gui-on-wsl2-cypress
 
