@@ -58,9 +58,6 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 ## nvm
 https://github.com/nvm-sh/nvm#installing-and-updating
-```
-nvm install lts
-```
 
 ## npm Global Without sudo
 https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
