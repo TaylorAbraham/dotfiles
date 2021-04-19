@@ -30,7 +30,7 @@ alias 'gpl=git pull'
 alias 'gsync=git pull; git push'
 alias 'gd=git diff'
 alias 'gdc=git diff --cached'
-alias 'ginit=git init'
+alias 'gi=git init'
 alias 'gl=git log'
 alias 'gr=git reset'
 alias 'grb=git rebase'
@@ -46,7 +46,4 @@ alias 'gstsh=git stash show -p'
 alias 'gstp=git stash pop'
 alias 'gstd=git stash drop'
 alias 'gstl=git stash list'
-# PLUGIN ALIASES
-# These aliases are provided by OhMyZsh plugins
-# tmux - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases
-# Git - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases
+
