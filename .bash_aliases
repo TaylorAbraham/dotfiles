@@ -10,8 +10,9 @@ alias 'tas=tmux attach-session -t'
 alias 'tks=tmux kill-session -t'
 alias 'vi=vim'
 # Bash commands
-#alias 'clear=clear && fortune | cowsay -f stegosaurus | lolcat'
-alias 'clear=clear && screenfetch'
+alias 'fetch=screenfetch' # Set whatever you want your screenfetch to be here
+#alias 'fetch=fortune | cowsay -f stegosaurus | lolcat'
+alias 'clear=clear && fetch'
 alias 'lol=lolcat'
 alias 'suu=sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
 # Youtube-dl

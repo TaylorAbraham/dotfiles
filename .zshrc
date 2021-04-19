@@ -112,6 +112,5 @@ DISABLE_AUTO_TITLE=true
 stty -ixon
 
 # STARTUP
-#fortune | cowsay -f stegosaurus | lolcat
-screenfetch # Distro logo and machine specs
+fetch # Display current screenfetch defined in .bash_aliases
 
