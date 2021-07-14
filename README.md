@@ -55,7 +55,7 @@ vundle
 ## "Important" utilities
 
 ```
-sudo apt install -y neofetch lolcat cowsay fortune-mod
+sudo apt install -y neofetch screenfetch lolcat cowsay fortune-mod
 ```
 
 ## SSH Keys
