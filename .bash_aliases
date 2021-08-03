@@ -14,7 +14,7 @@ alias 'fetch=screenfetch' # Set whatever you want your screenfetch to be here
 #alias 'fetch=fortune | cowsay -f stegosaurus | lolcat'
 alias 'clear=clear && fetch'
 alias 'lol=lolcat'
-alias 'suu=sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
+alias 'revitalize=sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
 # Youtube-dl
 alias 'youtube-dla=youtube-dl --extract-audio --audio-format mp3 --no-playlist'
 alias 'youtube-dlap=youtube-dl --extract-audio --audio-format mp3'
