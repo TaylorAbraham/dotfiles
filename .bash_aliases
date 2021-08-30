@@ -6,15 +6,15 @@ alias 'py=python3'
 alias 'python=python3'
 alias 'rs=redshift'
 alias 't=tmux'
+alias 'tx=tmuxinator'
 alias 'tas=tmux attach-session -t'
 alias 'tks=tmux kill-session -t'
 alias 'vi=vim'
 # Bash commands
-alias 'fetch=screenfetch' # Set whatever you want your screenfetch to be here
+alias 'fetch=neofetch' # Set whatever you want your screenfetch to be here
 #alias 'fetch=fortune | cowsay -f stegosaurus | lolcat'
 alias 'clear=clear && fetch'
 alias 'lol=lolcat'
-alias 'revitalize=sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y'
 # Youtube-dl
 alias 'youtube-dla=youtube-dl --extract-audio --audio-format mp3 --no-playlist'
 alias 'youtube-dlap=youtube-dl --extract-audio --audio-format mp3'
@@ -39,7 +39,8 @@ alias 'grv=git revert'
 alias 'gsw=git switch'
 alias 'gm=git merge'
 alias 'gmd=git checkout dev && git pull && git checkout - && git merge dev'
-alias 'gmm=git checkout master && git pull && git checkout - && git merge master'
+alias 'gmm=git checkout main && git pull && git checkout - && git merge main'
+alias 'gmmas=git checkout master && git pull && git checkout - && git merge master'
 alias 'gb=git branch'
 alias 'gst=git stash'
 alias 'gsts=git stash save'
@@ -50,4 +51,3 @@ alias 'gstl=git stash list'
 [alias]
     # Displays branches by most recent commit, with fancy formatting https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
     gbr = "!r() { refbranch=$1 count=$2; git for-each-ref --sort=-committerdate refs/heads --format='%(refname:short)|%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always --count=${count:-20} | while read line; do branch=$(echo \"$line\" | awk 'BEGIN { FS = \"|\" }; { print $1 }' | tr -d '*'); ahead=$(git rev-list --count \"${refbranch:-master}..${branch}\"); behind=$(git rev-list --count \"${branch}..${refbranch:-master}\"); colorline=$(echo \"$line\" | sed 's/^[^|]*|//'); echo \"$ahead|$behind|$colorline\" | awk -F'|' -vOFS='|' '{$5=substr($5,1,70)}1' ; done | ( echo \"ahead|behind||branch|lastcommit|message|author\\n\" && cat) | column -ts'|';}; r"
-

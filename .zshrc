@@ -7,7 +7,7 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="josh"
+ZSH_THEME="refined"
 # Good themes: josh (lightning bolt), refined (pink arrow)
 
 # Uncomment the following line to use case-sensitive completion.
@@ -30,7 +30,7 @@ ZSH_THEME="josh"
 DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -78,11 +78,6 @@ export EDITOR='code'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# nvm
-source /usr/share/nvm/init-nvm.sh
-
-export PATH=$PATH:/usr/local/go/bin
-
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
@@ -101,4 +96,3 @@ stty -ixon
 
 # STARTUP
 fetch # Display current screenfetch defined in .bash_aliases
-
