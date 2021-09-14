@@ -44,7 +44,6 @@ alias 'gmmas=git checkout master && git pull && git checkout - && git merge mast
 alias 'gb=git branch'
 alias 'gst=git stash'
 alias 'gstp=git stash push'
-alias 'gstpu=git stash push -u'
 alias 'gstsh=git stash show -p'
 alias 'gstpop=git stash pop'
 alias 'gstd=git stash drop'
