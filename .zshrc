@@ -72,20 +72,11 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor
 export EDITOR='code'
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 if [ -f ~/.private_aliases ]; then
   . ~/.private_aliases
-fi
-if [ -f ~/.wsl_startup ]; then
-  . ~/.wsl_startup
 fi
 
 # Terminal color mode
