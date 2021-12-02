@@ -1,3 +1,6 @@
+alias 'szr=source ~/.zshrc'
+alias 'szp=source ~/.zprofile'
+alias 'sba=source ~/.bash_aliases'
 # Program aliases
 alias 'fire=firebase'
 alias 'j=jump'
@@ -48,6 +51,3 @@ alias 'gstsh=git stash show -p'
 alias 'gstpop=git stash pop'
 alias 'gstd=git stash drop'
 alias 'gstl=git stash list'
-[alias]
-    # Displays branches by most recent commit, with fancy formatting https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
-    gbr = "!r() { refbranch=$1 count=$2; git for-each-ref --sort=-committerdate refs/heads --format='%(refname:short)|%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always --count=${count:-20} | while read line; do branch=$(echo \"$line\" | awk 'BEGIN { FS = \"|\" }; { print $1 }' | tr -d '*'); ahead=$(git rev-list --count \"${refbranch:-master}..${branch}\"); behind=$(git rev-list --count \"${branch}..${refbranch:-master}\"); colorline=$(echo \"$line\" | sed 's/^[^|]*|//'); echo \"$ahead|$behind|$colorline\" | awk -F'|' -vOFS='|' '{$5=substr($5,1,70)}1' ; done | ( echo \"ahead|behind||branch|lastcommit|message|author\\n\" && cat) | column -ts'|';}; r"
