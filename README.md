@@ -9,6 +9,7 @@ My personal dotfiles and an installer script to set them up. In this guide I ref
   - ["Important" utilities](#important-utilities)
   - [SSH Keys](#ssh-keys)
   - [npm Global Without sudo](#npm-global-without-sudo)
+- [WSL Installation](#wsl-installation)
 - [Arch Installation As a Dual Boot with Windows](#arch-installation-as-a-dual-boot-with-windows)
   - [Part 1 - Base Installation](#part-1---base-installation)
   - [Part 2 - Once you're chroot'd and done the Arch wiki install guide](#part-2---once-youre-chrootd-and-done-the-arch-wiki-install-guide)
@@ -23,7 +24,6 @@ My personal dotfiles and an installer script to set them up. In this guide I ref
     - [Set Arch to use local time](#set-arch-to-use-local-time)
   - [Appendix A - Troubleshooting](#appendix-a---troubleshooting)
   - [Brightness keys not working](#brightness-keys-not-working)
-- [WSL Installation](#wsl-installation)
 
 # Dotfile Installation
 
@@ -71,6 +71,56 @@ https://github.com/nvm-sh/nvm#installing-and-updating
 ## npm Global Without sudo
 
 https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+
+# WSL Installation
+
+1. Through the Microsoft Store, install a Linux distro of your choice and Windows Terminal
+2. Follow in full: https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
+3. Open Terminal settings and set Ubuntu to the default, and fix the starting directory to be your WSL home instead of your Windows home. Optionally, add a background.
+
+```
+"startingDirectory" : "//wsl$/Ubuntu/home/tay",
+"backgroundImage": "C:\\Users\\Taylor\\OneDrive\\Pictures\\Backgrounds\\Wooloo.jpg",
+"backgroundImageOpacity": 0.3
+```
+
+4. Follow [instructions above](#zsh--ohmyzsh) for installing Zsh + OhMyZsh
+5. Set up Windows ssh keys in a Powershell prompt, and add them to GitHub
+
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+cat C:\Users\Taylor\.ssh\id_rsa.pub | clip
+```
+
+6. Set up WSL ssh keys and fix private key permissions (NOTE: cp is used instead of making a symlink because this allows file permissions of your private key to be fixed)
+
+```
+cp -r /mnt/c/Users/Taylor/.ssh ~/.ssh
+chmod 600 ~/.ssh/id_rsa
+```
+
+7. Install dotfiles
+
+```
+cd ~
+git clone git@github.com:TaylorAbraham/dotfiles.git
+cd dotfiles && ./dot-install.sh
+```
+
+8. Fix tmux re-prompting you for sudo password by disabling tty tickets. Open sudoers and add `Defaults:tay !tty_tickets`
+
+```
+sudo update-alternatives --config editor
+sudo su
+visudo /etc/sudoers
+```
+
+9. Install utilities [listed above](#important-utilities)
+10. Fix firewall rules for inbound WSL connections. By default, the Windows Firewall will prevent any inbound connections to a server running on WSL 2. Fix WSL firewall rules with [the script in this comment](https://github.com/microsoft/WSL/issues/4150#issuecomment-504209723). Make sure to follow the instructions and tick off "Run with highest privilege" at the first screen of making the task. The command will be `powershell` with arguments something like `-File C:\Users\ryan_\Scripts\wslbridge.ps1`
+
+Extra resources are available at https://nickymeuleman.netlify.com/blog/linux-on-windows-wsl2-zsh-docker and https://nickymeuleman.netlify.com/blog/gui-on-wsl2-cypress
+
+**Install complete!**
 
 # Arch Installation As a Dual Boot with Windows
 
@@ -166,53 +216,3 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 ## Brightness keys not working
 
 Edit `/etc/default/grub`, and in it add `acpi_osi=` to the end of the `GRUB_CMDLINE_LINUX_DEFAULT` boot parameters. If that doesn't work, consult https://wiki.archlinux.org/index.php/intel_graphics#Backlight_is_not_adjustable
-
-# WSL Installation
-
-1. Through the Microsoft Store, install a Linux distro of your choice and Windows Terminal
-2. Follow in full: https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
-3. Open Terminal settings and set Ubuntu to the default, and fix the starting directory to be your WSL home instead of your Windows home. Optionally, add a background.
-
-```
-"startingDirectory" : "//wsl$/Ubuntu/home/tay",
-"backgroundImage": "C:\\Users\\Taylor\\OneDrive\\Pictures\\Backgrounds\\Wooloo.jpg",
-"backgroundImageOpacity": 0.3
-```
-
-4. Follow [instructions above](#zsh--ohmyzsh) for installing Zsh + OhMyZsh
-5. Set up Windows ssh keys in a Powershell prompt, and add them to GitHub
-
-```
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-cat C:\Users\Taylor\.ssh\id_rsa.pub | clip
-```
-
-6. Set up WSL ssh keys and fix private key permissions (NOTE: cp is used instead of making a symlink because this allows file permissions of your private key to be fixed)
-
-```
-cp -r /mnt/c/Users/Taylor/.ssh ~/.ssh
-chmod 600 ~/.ssh/id_rsa
-```
-
-7. Install dotfiles
-
-```
-cd ~
-git clone git@github.com:TaylorAbraham/dotfiles.git
-cd dotfiles && ./dot-install.sh
-```
-
-8. Fix tmux re-prompting you for sudo password by disabling tty tickets. Open sudoers and add `Defaults:tay !tty_tickets`
-
-```
-sudo update-alternatives --config editor
-sudo su
-visudo /etc/sudoers
-```
-
-9. Install utilities [listed above](#important-utilities)
-10. Fix firewall rules for inbound WSL connections. By default, the Windows Firewall will prevent any inbound connections to a server running on WSL 2. Fix WSL firewall rules with [the script in this comment](https://github.com/microsoft/WSL/issues/4150#issuecomment-504209723). Make sure to follow the instructions and tick off "Run with highest privilege" at the first screen of making the task. The command will be `powershell` with arguments something like `-File C:\Users\ryan_\Scripts\wslbridge.ps1`
-
-Extra resources are available at https://nickymeuleman.netlify.com/blog/linux-on-windows-wsl2-zsh-docker and https://nickymeuleman.netlify.com/blog/gui-on-wsl2-cypress
-
-**Install complete!**
