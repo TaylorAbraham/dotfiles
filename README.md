@@ -43,13 +43,18 @@ sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+https://github.com/romkatv/powerlevel10k
+
 ## Important utilities
+
+https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/
 
 `build-essential` installs make tools
 
 ```
-sudo apt install -y tmux inotify-tools ruby-dev build-essential
+sudo apt install -y tmux inotify-tools ruby-dev build-essential bat
 vundle
+npm i -g tldr
 ```
 
 ## "Important" utilities
