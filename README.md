@@ -54,7 +54,7 @@ https://github.com/junegunn/fzf
 `build-essential` installs make tools
 
 ```
-sudo apt install -y tmux inotify-tools ruby-dev build-essential bat
+sudo apt install -y tmux inotify-tools exa bat ruby-dev build-essential
 vundle
 npm i -g tldr
 ```
