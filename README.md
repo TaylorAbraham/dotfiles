@@ -49,6 +49,8 @@ https://github.com/romkatv/powerlevel10k
 
 https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/
 
+https://github.com/junegunn/fzf
+
 `build-essential` installs make tools
 
 ```
