@@ -47,9 +47,9 @@ https://github.com/romkatv/powerlevel10k
 
 ## Important utilities
 
-https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/
+[Git Fuzzy](https://github.com/junegunn/fzf)
 
-https://github.com/junegunn/fzf
+[Delta (For Pretty Diffs)](https://dandavison.github.io/delta/installation.html)
 
 `build-essential` installs make tools
 
