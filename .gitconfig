@@ -1,3 +1,23 @@
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+
+[delta]
+    features = decorations
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
 [pager]
 	branch = false
 [user]
@@ -9,3 +29,14 @@
 	editor = vim
 [init]
 	defaultBranch = main
+# Comment: Start of "Extra Block"
+# Comment: This is to unlock Visual Studio Code as your Git diff and Git merge tool
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+# Comment: End of "Extra Block"
