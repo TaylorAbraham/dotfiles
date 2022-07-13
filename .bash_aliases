@@ -2,6 +2,7 @@ alias 'szr=source ~/.zshrc'
 alias 'szp=source ~/.zprofile'
 alias 'sba=source ~/.bash_aliases'
 # Program aliases
+alias 'py=python'
 alias 'fire=firebase'
 alias 'j=jump'
 alias 't=tmux'
@@ -10,7 +11,7 @@ alias 'tas=tmux attach-session -t'
 alias 'tks=tmux kill-session -t'
 alias 'vi=vim'
 # Bash commands
-alias 'fetch=neofetch' # Set whatever you want your screenfetch to be here
+alias 'fetch=hyfetch' # Set whatever you want your screenfetch to be here
 alias 'ls=exa --icons'
 alias 'cat=bat'
 #alias 'fetch=fortune | cowsay -f stegosaurus | lolcat'
