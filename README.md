@@ -62,7 +62,7 @@ npm i -g tldr
 ## "Important" utilities
 
 ```
-sudo apt install -y neofetch screenfetch lolcat cowsay fortune-mod
+sudo apt install -y hyfetch lolcat cowsay fortune-mod
 ```
 
 ## SSH Keys
