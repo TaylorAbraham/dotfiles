@@ -12,7 +12,7 @@ alias 'tks=tmux kill-session -t'
 alias 'vi=vim'
 # Bash commands
 alias 'fetch=hyfetch' # Set whatever you want your screenfetch to be here
-alias 'ls=exa --icons'
+alias 'ls=eza'
 alias 'cat=bat'
 #alias 'fetch=fortune | cowsay -f stegosaurus | lolcat'
 alias 'clear=clear && fetch'
