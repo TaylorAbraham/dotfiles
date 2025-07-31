@@ -1,6 +1,6 @@
 # Overview
 
-My personal dotfiles and an installer script to set them up. In this guide I reference my unix username `tay` and my Windows account folder name `taylo`, so change them to your folder names accordingly.
+My personal dotfiles and an installer script to set them up. In this guide I reference my unix username `tay` and my Windows account folder name `Taylor`, so change them to your folder names accordingly.
 
 - [Dotfile Installation](#dotfile-installation)
 - [General Post-OS Install/Setup](#general-post-os-installsetup)
@@ -47,22 +47,20 @@ https://github.com/romkatv/powerlevel10k
 
 ## Important utilities
 
-[Git Fuzzy](https://github.com/junegunn/fzf)
-
-[Delta (For Pretty Diffs)](https://dandavison.github.io/delta/installation.html)
-
 `build-essential` installs make tools
 
 ```
 sudo apt install -y tmux inotify-tools eza bat ruby-dev build-essential
 vundle
 npm i -g tldr
+brew install fzf git-delta
 ```
 
 ## "Important" utilities
 
 ```
-sudo apt install -y hyfetch lolcat cowsay fortune-mod
+sudo apt install -y lolcat cowsay fortune-mod
+brew install hyfetch
 ```
 
 ## SSH Keys
@@ -81,9 +79,9 @@ https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
 
 # WSL Installation
 
-1. Through the Microsoft Store, install a Linux distro of your choice and Windows Terminal
+1. Through the Microsoft Store, install Windows Terminal
 2. Follow in full: https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
-3. Open Terminal settings and set Ubuntu to the default, and fix the starting directory to be your WSL home instead of your Windows home. Optionally, add a background.
+3. Open Terminal settings and set Ubuntu to the default. Optionally, add a background.
 
 ```
 "startingDirectory" : "//wsl$/Ubuntu/home/tay",
@@ -102,7 +100,7 @@ cat C:\Users\Taylor\.ssh\id_rsa.pub | clip
 6. Set up WSL ssh keys and fix private key permissions (NOTE: cp is used instead of making a symlink because this allows file permissions of your private key to be fixed)
 
 ```
-cp -r /mnt/c/Users/Taylor/.ssh ~/.ssh
+cp -r /mnt/c/Users/Taylor/.ssh ~
 chmod 600 ~/.ssh/id_rsa
 ```
 
