@@ -17,6 +17,10 @@ alias 'cat=bat'
 #alias 'fetch=fortune | cowsay -f stegosaurus | lolcat'
 alias 'clear=clear && fetch'
 alias 'lol=lolcat'
+# pnpm
+alias 'p=pnpm'
+alias 'pup=pnpm upgrade'
+alias 'pinball=pnpm install'
 # Youtube-dl
 alias 'youtube-dla=youtube-dl --extract-audio --audio-format mp3 --no-playlist'
 alias 'youtube-dlap=youtube-dl --extract-audio --audio-format mp3'
